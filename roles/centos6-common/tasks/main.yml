@@ -3,6 +3,7 @@
   yum: name={{ item }}
   with_items:
     - mlocate
+    - libselinux-python
 
 - name: disable SELinux (Sorry, Ishikawa-san)
   shell: getenforce | grep -q Disabled || (setenforce 0 && echo changed)
